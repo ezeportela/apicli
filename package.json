@@ -1,0 +1,34 @@
+{
+  "name": "apicli",
+  "version": "1.0.0",
+  "description": "API Cli tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezeportela/apicli.git"
+  },
+  "keywords": [
+    "API",
+    "Cli"
+  ],
+  "author": "Ezequiel Portela <eportelab@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ezeportela/apicli/issues"
+  },
+  "homepage": "https://github.com/ezeportela/apicli#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "figlet": "^1.2.4",
+    "inquirer": "^7.0.0",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.15",
+    "minimist": "^1.2.0",
+    "touch": "^3.1.0"
+  }
+}
