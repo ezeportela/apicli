@@ -1,5 +1,8 @@
 {
   "name": "apicli",
+  "bin": {
+    "apicli": "./index.js"
+  },
   "version": "1.0.0",
   "description": "API Cli tool",
   "main": "index.js",
