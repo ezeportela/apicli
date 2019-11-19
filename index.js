@@ -16,6 +16,7 @@ console.log(
     figlet.textSync('apicli', { horizontalLayout: 'full' })
   )
 );
+console.log('');
 
 program
   .command('version')
