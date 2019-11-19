@@ -7,6 +7,7 @@ const program = require('commander');
 
 const {version} = require('./lib/commands/version');
 const {generate} = require('./lib/commands/generate');
+const {commit} = require('./lib/commands/commit');
 
 
 clear();
@@ -27,5 +28,11 @@ program
   .alias('g')
   .description('Generate config, routes and services')
   .action(generate);
+
+program
+  .command('commit')
+  .alias('c')
+  .description('Commit changes')
+  .action(commit);
 
 program.parse(process.argv);
