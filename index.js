@@ -3,39 +3,11 @@
 const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
-const minimist = require('minimist');
+const program = require('commander');
 
-const {askGenerate} = require('./lib/inquirer');
-const {generateConfigFiles} = require('./lib/config');
-const {generateRoutes} = require('./lib/routes');
-const {generateHttpServices} = require('./lib/httpServices');
+const {version} = require('./lib/commands/version');
+const {generate} = require('./lib/commands/generate');
 
-
-const run = async () => {
-  const argv = minimist(process.argv.slice(2));
-    
-  switch(argv._[0]) {
-    case 'version':
-      const package = require('./package.json');
-      console.log(`Version: ${package.version}`);
-      break;
-    case 'generate':
-      const result = await askGenerate();
-      
-      switch (result.generate) {
-        case 'config':
-          generateConfigFiles();
-          break;
-        case 'routes':
-          generateRoutes();
-          break;
-        case 'http services':
-          generateHttpServices();
-          break;
-      }
-      break;
-  }
-};
 
 clear();
 console.log(
@@ -43,4 +15,17 @@ console.log(
     figlet.textSync('apicli', { horizontalLayout: 'full' })
   )
 );
-run();
+
+program
+  .command('version')
+  .alias('v')
+  .description('Program Version')
+  .action(version);
+
+program
+  .command('generate')
+  .alias('g')
+  .description('Generate config, routes and services')
+  .action(generate);
+
+program.parse(process.argv);
