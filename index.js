@@ -7,7 +7,7 @@ const program = require('commander');
 
 const {version} = require('./lib/commands/version');
 const {generate} = require('./lib/commands/generate');
-const {commit} = require('./lib/commands/commit');
+const {commit} = require('./lib/commands/git');
 
 
 clear();
