@@ -7,7 +7,7 @@ const program = require('commander');
 
 const {version} = require('./lib/commands/version');
 const {generate} = require('./lib/commands/generate');
-const {commit} = require('./lib/commands/git');
+const {commit, pull} = require('./lib/commands/git');
 
 
 clear();
@@ -35,5 +35,11 @@ program
   .alias('c')
   .description('Commit changes')
   .action(commit);
+
+  program
+  .command('pull')
+  .alias('p')
+  .description('Pull changes')
+  .action(pull);
 
 program.parse(process.argv);
