@@ -13,8 +13,8 @@ const {commit} = require('./lib/commands/commit');
 clear();
 console.log(
   chalk.yellow(
-    figlet.textSync('apicli', { horizontalLayout: 'full' })
-  )
+    figlet.textSync('apicli', {horizontalLayout: 'full'}),
+  ),
 );
 console.log('');
 
