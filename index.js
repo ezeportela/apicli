@@ -22,6 +22,7 @@ console.log('');
 program
   .command('version')
   .alias('v')
+  .option('-a, --app', 'Gets the app version')
   .description('Program Version')
   .action(version);
 
