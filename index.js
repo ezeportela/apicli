@@ -9,6 +9,7 @@ const {version} = require('./lib/commands/version');
 const {generate} = require('./lib/commands/generate');
 const {commit, pull} = require('./lib/commands/git');
 const {sops} = require('./lib/commands/sops');
+const registerExecuteCommands = require('./lib/commands/execute');
 
 
 clear();
@@ -53,5 +54,7 @@ program
   .option('-f, --file <filepath>', 'path of file', './config/prodblue.json')
   .description('Encrypt/Decrypt files')
   .action(sops);
+
+registerExecuteCommands(program);
 
 program.parse(process.argv);
