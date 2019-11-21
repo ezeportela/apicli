@@ -8,6 +8,7 @@ const program = require('commander');
 const {version} = require('./lib/commands/version');
 const {generate} = require('./lib/commands/generate');
 const {commit, pull} = require('./lib/commands/git');
+const {sops} = require('./lib/commands/sops');
 
 
 clear();
@@ -36,10 +37,19 @@ program
   .description('Commit changes')
   .action(commit);
 
-  program
+program
   .command('pull')
   .alias('p')
   .description('Pull changes')
   .action(pull);
+
+program
+  .command('sops')
+  .alias('s')
+  .option('-e, --encrypt', 'encrypt file')
+  .option('-d, --decrypt', 'decrypt file')
+  .option('-f, --file <string>', 'path of file', './config/prodblue.json')
+  .description('Encrypt/Decrypt files')
+  .action(sops);
 
 program.parse(process.argv);
