@@ -1,0 +1,17 @@
+const express = require('express');
+{{imports}}
+const methodNotAllowed =
+  require('@common/node-security').methodNotAllowedHandler;
+
+const registerRoutes = (app, tokenDecoderMiddleware) => {
+  // eslint-disable-next-line new-cap
+  const router = express.Router();
+
+  {{endpoints}}
+
+  app.use('{{basePath}}', router);
+
+  return app;
+};
+
+module.exports = registerRoutes;
