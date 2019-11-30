@@ -3,7 +3,7 @@
   "bin": {
     "apicli": "./index.js"
   },
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "API Cli tool",
   "main": "index.js",
   "scripts": {

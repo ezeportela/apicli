@@ -9,6 +9,8 @@ const registerExportsCommands = require('./lib/commands/export');
 const registerGitCommands = require('./lib/commands/git');
 const registerSopsCommands = require('./lib/commands/sops');
 const registerExecuteCommands = require('./lib/commands/execute');
+const registerInitCommands = require('./lib/commands/init');
+
 
 printAppName();
 
@@ -25,5 +27,6 @@ registerExportsCommands(program);
 registerGitCommands(program);
 registerSopsCommands(program);
 registerExecuteCommands(program);
+registerInitCommands(program);
 
 program.parse(process.argv);
