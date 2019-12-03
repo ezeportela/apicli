@@ -1,0 +1,4 @@
+configDir: /config
+routesDir: /src/application/routes
+controllerDir: /src/application/controllers
+servicesDir: /src/infrastructure/httpServices

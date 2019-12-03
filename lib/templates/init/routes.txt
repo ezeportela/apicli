@@ -1,0 +1,4 @@
+basePath: /
+routes:
+  - entries:
+    imports:
