@@ -1,0 +1,5 @@
+errors:
+- code: example
+  message: Error de Ejemplo
+  severity: LOW
+  status: 400

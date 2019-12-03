@@ -1,0 +1,5 @@
+services:
+  ExampleService:
+    file: example
+    name: getExample
+    method: get

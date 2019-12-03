@@ -1,4 +1,11 @@
 basePath: /
 routes:
-  - entries:
+  template:
+    entries:
+      - path: /template
+        method: get
+        middlewares:
+          - templateController.get
     imports:
+      - what: templateController
+        from: ../controllers/template.controller
