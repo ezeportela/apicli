@@ -3,7 +3,6 @@ const program = require('commander');
 
 const {printAppName} = require('./lib/common/bash');
 const registerVersionCommands = require('./lib/commands/version');
-const {generate} = require('./lib/commands/generate');
 const registerImportsCommands = require('./lib/commands/import');
 const registerExportsCommands = require('./lib/commands/export');
 const registerGitCommands = require('./lib/commands/git');
@@ -15,12 +14,6 @@ const registerInitCommands = require('./lib/commands/init');
 printAppName();
 
 registerVersionCommands(program);
-
-program
-  .command('generate')
-  .alias('g')
-  .description('Generate config, routes and services')
-  .action(generate);
 
 registerImportsCommands(program);
 registerExportsCommands(program);
