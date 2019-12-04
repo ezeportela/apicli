@@ -1,0 +1,47 @@
+const getError = (err) => {
+  const errorCodes = require('/src/infrastructure/dictionaries/error.codes.json');
+  const row =
+    errorCodes.errors.filter((error) =>
+      error.code === err.code)[0];
+
+  if (row) {
+    const {code, message, severity, status} = row;
+    err.code = code;
+    err.message = message;
+    err.severity = severity;
+    err.status = status;
+  }
+
+  return err;
+};
+
+const createError = (code) => {
+  const error = new Error();
+  error.code = code;
+  throw error;
+};
+
+const errorHandler = (err, defaultError) => {
+  if (err.statusCode == 401) err.code = 'unauthorized';
+
+  if (!err.code) err.code = defaultError;
+
+  const error = getError(err);
+
+  throw error;
+};
+
+const resolveError = (err, res) => {
+  err = getError(err);
+
+  const {status} = err;
+
+  delete err.status;
+  res.status(status || 500).send(err);
+};
+
+module.exports = {
+  createError,
+  errorHandler,
+  resolveError,
+};

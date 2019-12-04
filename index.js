@@ -9,6 +9,7 @@ const registerGitCommands = require('./lib/commands/git');
 const registerSopsCommands = require('./lib/commands/sops');
 const registerExecuteCommands = require('./lib/commands/execute');
 const registerInitCommands = require('./lib/commands/init');
+const registerInstallCommands = require('./lib/commands/install');
 
 
 printAppName();
@@ -21,5 +22,6 @@ registerGitCommands(program);
 registerSopsCommands(program);
 registerExecuteCommands(program);
 registerInitCommands(program);
+registerInstallCommands(program);
 
 program.parse(process.argv);
