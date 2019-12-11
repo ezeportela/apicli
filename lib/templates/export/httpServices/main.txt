@@ -1,5 +1,6 @@
 const AbstractRestService =
   require('@common/node-base-http-services/src/abstractRestService');
+{{imports}}
 
 class {{serviceName}} extends AbstractRestService {
   getName() {
@@ -9,6 +10,8 @@ class {{serviceName}} extends AbstractRestService {
   getMethod(request) {
     return '{{method}}';
   }
+
+{{addons}}
 }
 
 module.exports = {{serviceName}};

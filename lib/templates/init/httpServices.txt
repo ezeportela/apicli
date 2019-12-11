@@ -3,3 +3,11 @@ services:
     file: example
     name: getExample
     method: get
+    pathString: cuit
+    headers:
+      - name: consumer_id
+        header: x-global-consumer-id
+      - name: token
+        header: Authorization
+    requestData:
+      - cuit
