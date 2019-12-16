@@ -11,7 +11,7 @@ const registerExecuteCommands = require('./lib/commands/execute');
 const registerInitCommands = require('./lib/commands/init');
 const registerInstallCommands = require('./lib/commands/install');
 const registerTestCommands = require('./lib/commands/test');
-
+const registerPublishCommands = require('./lib/commands/publish');
 
 printAppName();
 
@@ -25,5 +25,6 @@ registerExecuteCommands(program);
 registerInitCommands(program);
 registerInstallCommands(program);
 registerTestCommands(program);
+registerPublishCommands(program);
 
 program.parse(process.argv);
