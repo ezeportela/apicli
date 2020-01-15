@@ -1,8 +1,0 @@
-  getHeaders(requestData) {
-    let header = super.getHeaders(requestData);
-    const {headers} = requestData;
-
-{{headers}}
-
-    return header;
-  }

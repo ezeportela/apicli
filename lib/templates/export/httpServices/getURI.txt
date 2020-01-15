@@ -1,5 +1,0 @@
-  getURI(request) {
-    const name = this.getName();
-    const uri = url.format(config.get(`services.${name}.url`));
-    return uri.replace(/:{{pathString}}/, request.{{pathString}});
-  }

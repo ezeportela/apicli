@@ -1,5 +1,0 @@
-    if (headers.{{name}}) {
-      Object.assign(header, {
-        '{{header}}': headers.{{name}},
-      });
-    }

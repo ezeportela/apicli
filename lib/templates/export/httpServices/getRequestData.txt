@@ -1,3 +1,0 @@
-  getRequestData(requestData) {
-    return {{data}};
-  }

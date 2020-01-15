@@ -1,7 +1,0 @@
-router
-    .route('{{path}}')
-    .{{method}}(
-      tokenDecoderMiddleware,
-      {{middlewares}}
-    )
-    .all(methodNotAllowed);
