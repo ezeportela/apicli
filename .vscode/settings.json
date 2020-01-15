@@ -1,0 +1,6 @@
+{
+  "prettier.bracketSpacing": false,
+  "prettier.trailingComma": "all",
+  "editor.formatOnSave": true,
+  "prettier.arrowParens": "always"
+}
